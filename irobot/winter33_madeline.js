@@ -61,7 +61,12 @@ process.stdin.on('keypress', function(ch, key) {
         console.log("play song");
         mysong = [
             [640, 100],
-            [650, 100]
+            [650, 100],
+	[660,100],
+[670,100],
+[680,100],
+[690,100],
+[700,100],
         ];
         robot.sing(mysong);
     }
