@@ -12,7 +12,7 @@ robot.on('bump', function (e)
   robot.sing(mysong); 
   setTimeout(function() 
   {
-    socket.emit('drive', {left: -200, right: -200});
+    robot.drive(left: -200, right: -200);
   }, 1000)
   
 });
