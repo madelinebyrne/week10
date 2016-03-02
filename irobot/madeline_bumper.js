@@ -16,8 +16,8 @@ mysong = [
 
 robot.on('bump', function(e) {
     console.log('BUMP', e);
-     velocity.left = -50;
-        velocity.right = 50;
+     velocity.left = -100;
+        velocity.right = 100;
         robot.drive(velocity);
     setTimeout(function() {
         velocity.left = 200;
