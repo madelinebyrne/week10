@@ -1,12 +1,27 @@
 var irobot = require('./index');
 
 var robot = new irobot.Robot('/dev/ttyUSB0');
+velocity = {left:0, right:0};
 
-robot.on('ready', function () 
-{
-  console.log('READY');
+robot.on('ready', function() {
+    console.log('READY');
+    velocity.left = 200;
+        velocity.right = 200;
+        robot.drive(velocity);
 })
 
-mysong = [[640, 200]];
+mysong = [
+    [640, 200]
+];
 
-robot.on('bump', function (e) { console.log('BUMP', e); robot.sing(mysong); setTimeout(function() {socket.emit('drive', {left: -200, right: -200}, 1000)})
+robot.on('bump', function(e) {
+    console.log('BUMP', e);
+     velocity.left = -50;
+        velocity.right = 50;
+        robot.drive(velocity);
+    setTimeout(function() {
+        velocity.left = 200;
+        velocity.right = 200;
+        robot.drive(velocity);
+    }, 2000)
+});
